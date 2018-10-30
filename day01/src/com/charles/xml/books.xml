@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--指定dtd约束文件，books为根节点名称，SYSTEM后面跟dtd文件路径-->
+<!DOCTYPE books SYSTEM "books.dtd">
+<books>
+    <book>
+        <name>Java编程思想</name>
+        <author>Charles</author>
+        <price>$9</price>
+    </book>
+    <book>
+        <name>Redis实战</name>
+        <author>Charles</author>
+        <price>$6</price>
+    </book>
+    <book>
+        <name>高性能Mysql</name>
+        <author>Charles</author>
+        <price>$9</price>
+    </book>
+</books>

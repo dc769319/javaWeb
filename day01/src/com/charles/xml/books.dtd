@@ -1,0 +1,8 @@
+<!--定义根节点books，下面只能包含一个或多个book节点-->
+<!ELEMENT books (book+)>
+<!--book节点下面包含name，author，price属性-->
+<!ELEMENT book (name,author,price)>
+<!--name节点，PCDATA指的是被解析的字符串数据-->
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>

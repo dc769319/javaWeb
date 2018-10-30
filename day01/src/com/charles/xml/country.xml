@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<countrys>
+	<country>
+		<name id="china">中国</name>
+	</country>
+	<country>
+		<name>美国</name>
+	</country>
+	<country>
+		<name>法国</name>
+	</country>
+	<country>
+		<name>英国</name>
+	</country>
+	<![CDATA[
+		<name>晒</name>
+	]]>   
+</countrys>
