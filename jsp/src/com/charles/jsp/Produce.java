@@ -3,10 +3,10 @@ package com.charles.jsp;
 import java.io.Serializable;
 
 public class Produce implements Serializable {
-    private String name = "电吉他";
-    private double price = 180.02;
-    private int count = 100;
-    private String factoryAdd = "广州市";
+    private String name;
+    private double price;
+    private int count;
+    private String factoryAdd;
 
     public Produce() {
     }
