@@ -9,8 +9,10 @@
 </head>
 <body>
 <jsp:useBean id="person" class="com.charles.jsp.Person">
-    <!--设置所有属性值-->
-    <jsp:setProperty name="person" property="*" />
+    <%--设置所有属性值--%>
+    <jsp:setProperty name="person" property="*"/>
+    <%--如果表单某一项input元素的name值与javaBean中属性名称不一样。例如：表单的name为username，则可以如下设置--%>
+    <%--<jsp:setProperty name="person" property="name" param="username" />--%>
 </jsp:useBean>
 <div>
     <ul>
