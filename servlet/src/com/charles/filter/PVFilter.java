@@ -6,9 +6,12 @@ import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter(filterName = "PVFilter", urlPatterns = "/index.jsp", initParams = {
-        @WebInitParam(name = "pv", value = "5000")
-})
+@WebFilter(
+        filterName = "PVFilter",
+        urlPatterns = "/index.jsp",
+        initParams = {
+                @WebInitParam(name = "pv", value = "5000")
+        })
 public class PVFilter implements Filter {
 
     private int pv = 0;
