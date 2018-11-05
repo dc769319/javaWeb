@@ -4,12 +4,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionEvent;
-import javax.servlet.http.HttpSessionListener;
 
-public class TestListener implements HttpSessionListener, ServletContextListener, ServletRequestListener {
+@WebListener
+public class TestListener implements ServletContextListener, ServletRequestListener {
 
     private Log log = LogFactory.getLog(this.getClass());
 
@@ -61,27 +60,5 @@ public class TestListener implements HttpSessionListener, ServletContextListener
         String url = req.getRequestURL().toString();
         this.log.info("IP:" + clientIp + ", uri:" + uri + ", url:" + url);
         req.setAttribute("reqStartTime", System.currentTimeMillis());
-    }
-
-    /**
-     * session创建
-     *
-     * @param se session事件
-     */
-    @Override
-    public void sessionCreated(HttpSessionEvent se) {
-        HttpSession session = se.getSession();
-        this.log.info("创建新的session，ID为" + session.getId());
-    }
-
-    /**
-     * session销毁
-     *
-     * @param se session事件
-     */
-    @Override
-    public void sessionDestroyed(HttpSessionEvent se) {
-        HttpSession session = se.getSession();
-        this.log.info("销毁session，ID为" + session.getId());
     }
 }
