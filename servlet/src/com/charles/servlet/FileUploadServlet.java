@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.Part;
 
 @MultipartConfig(maxFileSize = 5 * 1024 * 1024)
-@WebServlet(name = "FileUploadServlet", urlPatterns = "/fileUpload")
+@WebServlet(name = "FileUploadServlet", urlPatterns = "/fileUpload", asyncSupported = true)
 public class FileUploadServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,7 +28,7 @@ public class FileUploadServlet extends HttpServlet {
         if (p.getContentType().matches("^image/.+")) {
             String fileName = p.getSubmittedFileName(); //获取上传的文件的原始名称
             Log2File.write(logPath, "fileName", fileName);
-            String ext = FileTool.extensionName(fileName);
+            String ext = FileTool.extName(fileName);
             //生成新文件名（字母+数字）
             String newName = RandomStringUtils.randomAlphabetic(6) + "." + ext;
             String savePath = realPath + "upload/" + newName;

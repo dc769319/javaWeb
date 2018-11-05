@@ -8,6 +8,15 @@ import java.util.Date;
  * 将日志写入到文件中
  */
 public class Log2File {
+
+    /**
+     * 写日志到指定文件
+     * @param filePath 日志文件路径
+     * @param title 日志标题
+     * @param content 日志内容
+     * @return boolean
+     * @throws IOException 文件IO异常
+     */
     public static boolean write(String filePath, String title, String content) throws IOException {
         //File对象
         File file = new File(filePath);

@@ -1,4 +1,5 @@
 .idea/
 *.iml
-servlet/*.iml
-jsp/*.iml
+servlet/servlet.iml
+jsp/jsp.iml
+servlet/web/upload/
