@@ -3,3 +3,4 @@
 servlet/servlet.iml
 jsp/jsp.iml
 servlet/web/upload/
+servlet/web/logs/
