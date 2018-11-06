@@ -4,3 +4,5 @@ servlet/servlet.iml
 jsp/jsp.iml
 servlet/web/upload/
 servlet/web/logs/
+servlet/web/WEB-INF/classes/
+jsp/web/WEB-INF/classes/

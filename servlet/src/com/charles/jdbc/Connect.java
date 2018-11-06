@@ -13,7 +13,7 @@ public class Connect {
         Class.forName("com.mysql.jdbc.Driver");
         String url = "jdbc:mysql://localhost:3306/jdbc_test";
         String user = "admin";
-        String pwd = "123456";
+        String pwd = "admin@localhost";
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url, user, pwd);
