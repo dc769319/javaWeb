@@ -11,9 +11,9 @@ public class Connect {
 
     public boolean run() throws ClassNotFoundException, IOException {
         Class.forName("com.mysql.jdbc.Driver");
-        String url = "jdbc:mysql://localhost:3306/jdbc_test";
-        String user = "admin";
-        String pwd = "admin@localhost";
+        String url = "jdbc:mysql://localhost:3306/jdbc_test?serverTimezone=UTC";
+        String user = "charles";
+        String pwd = "Charles@415";
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url, user, pwd);
