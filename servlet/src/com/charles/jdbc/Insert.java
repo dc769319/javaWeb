@@ -2,9 +2,10 @@ package com.charles.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class Connect {
+public class Insert {
 
     private String errMsg;
     private int errCode;
@@ -28,8 +29,20 @@ public class Connect {
             if (null == conn) {
                 return false;
             } else {
-                conn.close();
-                return true;
+                //测试数据写入
+                String sql = "insert into `tb_books` (`name`,`price`,`bookCount`,`author`) values (?,?,?,?);";
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setString(1, "Bobo");
+                ps.setDouble(2, 23.5);
+                ps.setInt(3, 12);
+                ps.setString(4, "Charles");
+                int row = ps.executeUpdate();
+                ps.close();
+                if (row > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
         } catch (SQLException e) {
             this.errCode = e.getErrorCode();
