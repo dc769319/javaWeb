@@ -11,7 +11,7 @@
     <title>添加图书信息</title>
 </head>
 <body>
-<form method="post" action="">
+<form method="post" action="addBook">
     <div>
         <label>图书名称</label>
         <input type="text" name="name" title="输入图书名称" />
