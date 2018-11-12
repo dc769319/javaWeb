@@ -34,6 +34,7 @@
         <th>价格</th>
         <th>数量</th>
         <th>作者</th>
+        <th>操作</th>
     </tr>
 
     <%
@@ -49,6 +50,13 @@
         <td><%=book.getBookCount()%>
         </td>
         <td><%=book.getAuthor()%>
+        </td>
+        <td>
+            <form method="post" action="bookUpdate">
+                <input type="hidden" value="<%=book.getId()%>" name="id">
+                <input type="text" name="bookCount" placeholder="输入数量">
+                <button type="submit">修改</button>
+            </form>
         </td>
     </tr>
     <%
