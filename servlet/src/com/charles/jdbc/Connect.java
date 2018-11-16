@@ -37,4 +37,19 @@ public class Connect {
             return false;
         }
     }
+
+    public Connection getMysqlConn() {
+        Connection conn = null;
+        try {
+            //加载驱动器
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/jdbc_test";
+            String user = "charles";
+            String password = "Charles@415";
+            conn = DriverManager.getConnection(url, user, password);
+        } catch (ClassNotFoundException | SQLException e) {
+            return null;
+        }
+        return conn;
+    }
 }

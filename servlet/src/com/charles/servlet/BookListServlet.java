@@ -43,6 +43,7 @@ public class BookListServlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
+        //请求转发
         req.getRequestDispatcher("bookList.jsp").forward(req, resp);
     }
 }

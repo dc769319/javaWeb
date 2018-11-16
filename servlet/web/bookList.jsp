@@ -57,6 +57,7 @@
                 <input type="text" name="bookCount" placeholder="输入数量">
                 <button type="submit">修改</button>
             </form>
+            <a href="bookDelete?id=<%=book.getId()%>"><button type="button">删除</button></a>
         </td>
     </tr>
     <%

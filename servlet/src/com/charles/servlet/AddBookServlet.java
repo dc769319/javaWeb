@@ -1,5 +1,7 @@
 package com.charles.servlet;
 
+import com.charles.jdbc.Connect;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -31,7 +32,7 @@ public class AddBookServlet extends HttpServlet {
         int bookCount = Integer.valueOf(req.getParameter("bookCount"));
         PrintWriter pw = resp.getWriter();
         try {
-            Connection conn = this.getMysqlConn();
+            Connection conn = (new Connect()).getMysqlConn();
             if (null == conn) {
                 pw.println("mysql连接失败");
                 //销毁，终止代码执行
@@ -51,20 +52,5 @@ public class AddBookServlet extends HttpServlet {
             pw.println(e.getMessage());
         }
         pw.close();
-    }
-
-    private Connection getMysqlConn() {
-        Connection conn = null;
-        try {
-            //加载驱动器
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/jdbc_test";
-            String user = "charles";
-            String password = "Charles@415";
-            conn = DriverManager.getConnection(url, user, password);
-        } catch (ClassNotFoundException | SQLException e) {
-            return null;
-        }
-        return conn;
     }
 }
