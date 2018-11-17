@@ -12,6 +12,11 @@ public class Product {
     private int id;
 
     /**
+     * 名称
+     */
+    private String name;
+
+    /**
      * 价格
      */
     private double price;
@@ -32,6 +37,14 @@ public class Product {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getPrice() {
