@@ -15,8 +15,14 @@
     String[] books = {"Linux服务器编程", "Redis最佳实例", "Mysql高性能编程"};
     request.setAttribute("books", books);
 %>
-<%
-    //String[]
-%>
+<ul>
+    <%--将循环变量i保存到request范围内的变量中，否则el访问不到--%>
+    <%
+        String[] bookList = (String[]) request.getAttribute("books");
+        for (int i = 0; i < bookList.length; i++) {
+            request.setAttribute("reqI", i); %>
+    <li>${books[reqI]}</li>
+    <% } %>
+</ul>
 </body>
 </html>
