@@ -19,5 +19,25 @@
     <li>session.maxInactiveInterval:${pageContext.session.maxInactiveInterval}</li>
     <li>servletContext.contextPath:${pageContext.servletContext.contextPath}</li>
 </ul>
+<%
+request.setAttribute("user", "charles");
+%>
+<!--访问作用域范围内的隐含对象-->
+<div>
+    ${requestScope.user}
+</div>
+<%
+session.setAttribute("password", "Lily");
+%>
+<div>
+    ${sessionScope.password}
+</div>
+
+<%
+application.setAttribute("name", "Perter");
+%>
+<div>
+    ${applicationScope.name}
+</div>
 </body>
 </html>
