@@ -38,5 +38,22 @@
     ${paramValues.hobby[1]}&nbsp;
     ${paramValues.hobby[2]}
 </div>
+<div>
+    ${header.connection}
+</div>
+<div>
+    ${header['user-agent']}
+</div>
+<div>
+    ${initParam.author}
+</div>
+<div>
+    <%
+        Cookie cookie = new Cookie("uuid", "c3B1v");
+        response.addCookie(cookie);
+    %>
+    <!--隐含cookie对象-->
+    ${cookie.uuid.value}
+</div>
 </body>
 </html>
