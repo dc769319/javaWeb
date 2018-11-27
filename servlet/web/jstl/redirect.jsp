@@ -1,22 +1,20 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2018/11/26
-  Time: 9:56
+  Date: 2018/11/27
+  Time: 9:48
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>生成带参数的超链接</title>
+    <title>重定向</title>
 </head>
 <body>
-<c:url var="registerUrl" scope="page" value="register.jsp">
+<!--/servlet/el/bookList.jsp-->
+<c:redirect url="/el/bookList.jsp" context="/servlet">
     <c:param name="username" value="charles" />
-    <c:param name="password" value="charles111" />
-</c:url>
-<%--生成register.jsp?username=charles&password=charles111--%>
-<a href="${registerUrl}">注册</a>
+</c:redirect>
 </body>
 </html>

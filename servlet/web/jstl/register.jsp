@@ -11,7 +11,7 @@
     <title>注册页</title>
 </head>
 <body>
-<%=request.getParameter("username")%>
-<%=request.getParameter("password")%>
+${param.username}
+${param.password}
 </body>
 </html>
