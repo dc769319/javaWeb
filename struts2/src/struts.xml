@@ -21,5 +21,10 @@
         <action name="userUpdate" method="update" class="com.charles.action.UserAction">
             <result name="update">user_update.jsp</result>
         </action>
+
+        <action name="greeting" class="com.charles.action.GreetingAction">
+            <result name="success">greeting_success.jsp</result>
+            <result name="error">greeting_error.jsp</result>
+        </action>
     </package>
 </struts>
