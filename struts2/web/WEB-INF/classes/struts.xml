@@ -26,5 +26,9 @@
             <result name="success">greeting_success.jsp</result>
             <result name="error">greeting_error.jsp</result>
         </action>
+
+        <action name="mapTest" class="com.charles.action.MapTestAction">
+            <result name="success">map_test.jsp</result>
+        </action>
     </package>
 </struts>
